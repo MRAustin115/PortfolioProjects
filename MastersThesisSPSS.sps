@@ -1,11 +1,11 @@
 ﻿* Encoding: UTF-8.
 
-*This file contains the syntax for a portion of the analyses run in SPSS on experimental data from my Master's Thesis project.
+*This file contains the syntax for a portion of the cleaning and analyses run in SPSS on experimental data from my Master's Thesis project.
 *More information about the project can be found written up here: https://commons.lib.jmu.edu/masters202029/113/
 
 *But here's some brief context:
   *The project investigated the effect of spacing between episodes of a Netflix show on memory for show content.
-  *It was a 2 (Massed, Spaced) x 2 (1-week, 4-week) design between subjects design
+  *It was a 2 (Massed, Spaced) x 2 (1-week, 4-week) between subjects design
 
   *Massed groups viewed 3 1-hour long episodes back-to-back with no break (i.e., 'Binge-watching')
   *Spaced groups viewed the same 3 episodes, but with one week inbetween each viewing
