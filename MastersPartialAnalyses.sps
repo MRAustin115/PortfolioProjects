@@ -4,14 +4,14 @@
 *More information about the project can be found written up here: https://commons.lib.jmu.edu/masters202029/113/
 
 *But here's some brief context:
-*The project investigated the effect of spacing between episodes of a Netflix show on memory for show content.
-*It was a 2 (Massed, Spaced) x 2 (1-week, 4-week) design between subjects design
+  *The project investigated the effect of spacing between episodes of a Netflix show on memory for show content.
+  *It was a 2 (Massed, Spaced) x 2 (1-week, 4-week) design between subjects design
 
-*Massed groups viewed 3 1-hour long episodes back-to-back with no break (i.e., 'Binge-watching')
-*Spaced groups viewed the same 3 episodes, but with one week inbetween each viewing
-*Time of test was added as an additional variable, with some participants being tested at a 1-week delay and others at a 4-week delay
+  *Massed groups viewed 3 1-hour long episodes back-to-back with no break (i.e., 'Binge-watching')
+  *Spaced groups viewed the same 3 episodes, but with one week inbetween each viewing
+  *Time of test was added as an additional variable, with some participants being tested at a 1-week delay and others at a 4-week delay
 
-*The test consisted of 40 questions assessing participant memory for show content, 35 were multiple choice, 5 were short answer
+  *The test consisted of 40 questions assessing participant memory for show content, 35 were multiple choice, 5 were short answer
 
 
  
