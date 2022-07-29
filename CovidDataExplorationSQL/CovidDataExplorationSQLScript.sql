@@ -1,15 +1,14 @@
 
 /*Covid-19 Data Exploration using MS SQL Server
 
-This Document is currently an Active Work in Progress...
 
 -- GUIDING QUESTIONS
--- 1. How lethal is COVID-19 -- what percentage of cases result in death? How does this differ by country?
--- 2. Which countries have the highest COVID death count?
--- 3. What percentage of the population (by country) has contracted COVID? (i.e., infection rate)
--- 4. Which countries have the highest infection rate?
--- 5. What does the death count look like at a continent level? Globally?
--- 6. What is the rate of vaccination per country? What does the timeline look like?
+-- 1. How lethal is COVID-19 -- what percentage of cases result in death? How does the U.S. compare to global numbers?
+-- 2. What does the death count look like at a continent level? Globally?
+-- 3. What percentage of the population (by country) has contracted COVID by this point in time? (i.e., infection rate)
+-- 4. How has the U.S. infection rate progressed over time since the onset of the pandemic?
+-- 5. What is the rate of vaccination and boosters in the U.S.? What does the timeline look like?
+
 
 Skills Used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
 
@@ -245,3 +244,58 @@ Left Outer Join PortfolioProject..BoostersUS as boo
 	On dea.location = boo.location
 	and dea.date = boo.date
 Where dea.continent is not null and dea.location = 'United States'
+
+
+
+-- Creating Tables specifically for Tableau Vizzes
+
+-- 1.
+Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
+From PortfolioProject..CovidDeaths
+where continent is not null 
+order by 1,2
+
+-- 2.
+Select location, SUM(cast(new_deaths as int)) as TotalDeathCount
+-- , SUM(new_cases) as total_cases, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
+From PortfolioProject..CovidDeaths
+Where continent is null 
+and location in ('Europe', 'North America', 'South America', 'Asia', 'Oceania', 'Africa')
+Group by location
+order by TotalDeathCount desc
+
+-- 3.
+Select location, population, MAX(total_cases) as HighestInfectedCount, Max((total_cases/population))*100 as InfectedPercentage
+From PortfolioProject..CovidDeaths
+Where continent is not null
+Group by population, location
+Order by InfectedPercentage Desc
+
+-- 4.
+Select Location, Population,date, MAX(total_cases) as HighestInfectedCount,  Max((total_cases/population))*100 as InfectedPercentage
+From PortfolioProject..CovidDeaths
+--Where location like '%states%'
+Group by Location, Population, date
+order by InfectedPercentage desc
+
+-- 5.
+Select *
+From #PercentPopFullyVaccinated
+Where date = '2022-07-06'
+
+
+-- 6.
+Select dea.date, dea.new_cases, dea.hosp_patients, dea.new_deaths,  vac.new_tests, vac.new_vaccinations
+From PortfolioProject..CovidDeaths as dea
+Join PortfolioProject..CovidVaccinations as vac
+	On dea.location = vac.location
+	and dea.date = vac.date
+Where dea.continent is not null
+and dea.location = 'United States'
+Order by dea.date
+
+-- 7.
+Select SUM(new_cases) as total_cases, SUM(cast(new_deaths as int)) as total_deaths, SUM(cast(new_deaths as int))/SUM(New_Cases)*100 as DeathPercentage
+From PortfolioProject..CovidDeaths
+where location = 'United States'
+order by 1,2
