@@ -10,7 +10,7 @@
 -- 5. What is the rate of vaccination and boosters in the U.S.? What does the timeline look like?
 
 
-Skills Used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
+Skills Used: Joins, CTE's, Temp Tables, Window Functions, Aggregate Functions, Creating Views, Converting Data Types
 
 */
 
