@@ -7,6 +7,6 @@ https://www.kaggle.com/code/michaelaustin7722/bike-share-case-study
 
 Additionally, I've included some of the code I created in SPSS to clean and analyze experimental data from my Master's Thesis project a few years ago.
 
-And finally, my most recent project involves examining and cleaning COVID data using SQL. An interactive dashboard visualizing some of those query results can be found here: https://public.tableau.com/app/profile/michael.austin4070/viz/VisualizingCovidData/Dashboard1
+And finally, my most recent project involves exploring COVID data using SQL. An interactive dashboard visualizing some of those query results can be found here: https://public.tableau.com/app/profile/michael.austin4070/viz/VisualizingCovidData/Dashboard1
 
 More to come!
